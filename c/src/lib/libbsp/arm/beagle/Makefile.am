@@ -39,6 +39,7 @@ include_bsp_HEADERS += ../shared/include/arm-release-id.h
 include_bsp_HEADERS += ../shared/include/start.h
 include_bsp_HEADERS += include/irq.h
 include_bsp_HEADERS += include/i2c.h
+include_bsp_HEADERS += include/mmc.h
 include_bsp_HEADERS += include/beagleboneblack.h
 include_bsp_HEADERS += include/bbb-gpio.h
 
@@ -115,6 +116,9 @@ libbsp_a_SOURCES += ../../shared/console.c \
 
 # I2C
 libbsp_a_SOURCES += misc/i2c.c
+
+# MMC
+libbsp_a_SOURCES += misc/mmc.c
 
 # GPIO
 libbsp_a_SOURCES += gpio/bbb-gpio.c
