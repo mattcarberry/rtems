@@ -110,6 +110,10 @@ $(PROJECT_INCLUDE)/bsp/i2c.h: include/i2c.h $(PROJECT_INCLUDE)/bsp/$(dirstamp)
 	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bsp/i2c.h
 PREINSTALL_FILES += $(PROJECT_INCLUDE)/bsp/i2c.h
 
+$(PROJECT_INCLUDE)/bsp/mmc.h: include/mmc.h $(PROJECT_INCLUDE)/bsp/$(dirstamp)
+	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bsp/mmc.h
+PREINSTALL_FILES += $(PROJECT_INCLUDE)/bsp/mmc.h
+
 $(PROJECT_INCLUDE)/bsp/beagleboneblack.h: include/beagleboneblack.h $(PROJECT_INCLUDE)/bsp/$(dirstamp)
 	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bsp/beagleboneblack.h
 PREINSTALL_FILES += $(PROJECT_INCLUDE)/bsp/beagleboneblack.h

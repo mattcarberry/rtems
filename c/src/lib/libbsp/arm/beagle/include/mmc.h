@@ -1,6 +1,10 @@
 #ifndef LIBBSP_ARM_BEAGLE_MMC_H
 #define LIBBSP_ARM_BEAGLE_MMC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
 /* Pad configuration */
 #define PADCONF_RCVR_EN (1 << 5)
 
@@ -65,3 +69,4 @@
 #define SD_CAPA_MBL_2048 (2 << 16)
 
 
+#endif /* LIBBSP_ARM_BEAGLE_MMC_H */
