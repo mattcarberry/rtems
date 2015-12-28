@@ -55,7 +55,37 @@ extern "C" {
 #define SD_ADMASAH	0x25c
 #define SD_REV		0x2FC
 
-//SD Capabilities 
+//SD_SYSCONFIG
+#define SD_SYSCONFIG_CLOCKACTIVITY_INTERFACECLK_EN (1 << 8) //Clock activity during wakeup mode
+#define SD_SYSCONFIG_CLOCKACTIVITY_FUNCTIONALCLK_EN (1 << 9)
+#define SD_SYSCONFIG_SIDLEMODE_NOIDLE (1 << 3)
+#define SD_SYSCONFIG_SIDLEMODE_MASK (3 << 3)
+#define SD_SYSCONFIG_AUTOGATING_EN (1 << 0)
+
+//SD_CON
+#define SD_CON_SLAVE_DMA_EDGE (0 << 21)
+#define SD_CON_SLAVE_DMA_LEVEL (1 << 21)
+#define SD_CON_CEATA_EN (1 << 12)
+#define SD_CON_DW8_EN (1 << 5)
+#define SD_CON_OD_EN 1
+
+//SD_HCTL
+#define SD_HCTL_SDVS_1V8 (5 << 9)
+#define SD_HCTL_SDVS_3V0 (6 << 9)
+#define SD_HCTL_SDVS_3V3 (7 << 9)
+#define SD_HCTL_SDBP_EN (1 << 8)
+#define SD_HCTL_DTW_1BIT (0 << 1)
+#define SD_HCTL_DTW_4BIT (1 << 1)
+
+//SD_SYSCTL
+#define SD_SYSCTL_ICE_EN (1 << 0)
+#define SD_SYSCTL_ICS_ON (1 << 1)
+#define SD_SYSCTL_CLKD_1 (1 << 6)
+#define SD_SYSCTL_CLKD_2 (2 << 6)
+#define SD_SYSCTL_CLKD_3 (3 << 6)
+#define SD_SYSCTL_CLKD_3FF (0x3FF << 6)
+
+//SD_CAPA 
 #define SD_CAPA_BUS_64BIT_EN (1 << 28) //64-bit bus support
 #define SD_CAPA_VS18_EN (1 << 26) // Voltage Support 1.8V
 #define SD_CAPA_VS30_EN (1 << 25) // Voltage Support 3.0V
