@@ -6,24 +6,32 @@ extern "C" {
 #endif /* __cplusplus */
 
 /* Pad configuration */
+#define PADCONF_MODE_MASK (0x7 << 0)
+#define PADCONF_MODE_ONE  (1 << 0)
+#define PADCONF_MODE_TWO  (2 << 0)
+#define PADCONF_MODE_THREE (3 << 0)
 #define PADCONF_RCVR_EN (1 << 5)
+#define PADCONF_TYPESEL_PULLUP (1 << 4)
+#define PADCONF_TYPESEL_PULLDOWN (0 << 4)
+#define PADCONF_PUDEN_MASK (1 << 3)
 
 /* Clock Module Prepherial Registers */
 #define CM_PER_BASE 0x44E00000
 #define CM_PER_MMC0_CLKCTRL 0x3C
 #define CM_PER_MMC1_CLKCTRL 0xF4
 #define CM_PER_MMC2_CLKCTRL 0xF8
-#define CM_PER_CLKDIV32K_CLKCTRL 0x14c
+#define CM_PER_CLKDIV32K_CLKCTRL 0x14C
 
 // For Turning on and off clocks in these registers
-#define CM_PER_CLK_ENABLE	0x2
-#define CM_PER_DISABLE		0x0
+#define CM_PER_MODULEMODE_MASK		0x3
+#define CM_PER_MODULEMODE_ENABLE	0x2
+#define CM_PER_MODULEMODE_DISABLE	0x0
 
 
 /* MULTIMEDIA_CARD Registers */
-#define AM335X_MMC0_BASE 0x48060000
-#define AM335X_MMC1_BASE 0x481D8000
-#define AM335X_MMC2_BASE 0x47810000
+#define AM335X_MMC0_BASE 0x48060000UL
+#define AM335X_MMC1_BASE 0x481D8000UL
+#define AM335X_MMC2_BASE 0x47810000UL
 //Offsets
 #define SD_SYSCONFIG	0x110
 #define SD_SYSSTATUS 	0x114
@@ -83,9 +91,10 @@ extern "C" {
 #define SD_SYSCTL_CLKD_1 (1 << 6)
 #define SD_SYSCTL_CLKD_2 (2 << 6)
 #define SD_SYSCTL_CLKD_3 (3 << 6)
-#define SD_SYSCTL_CLKD_3FF (0x3FF << 6)
+#define SD_SYSCTL_CLKD_1023 (0x3FF << 6)
 
 //SD_CAPA 
+#define SD_CAPA_MASK 0xFFFFFFFF
 #define SD_CAPA_BUS_64BIT_EN (1 << 28) //64-bit bus support
 #define SD_CAPA_VS18_EN (1 << 26) // Voltage Support 1.8V
 #define SD_CAPA_VS30_EN (1 << 25) // Voltage Support 3.0V

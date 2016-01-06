@@ -262,9 +262,6 @@
 #define CM_PER_BASE 0x44E00000 /* Clock Module Peripheral Registers */
 #define CM_PER_TIMER7_CLKCTRL	(CM_PER_BASE + 0x7C)
     /* This register manages the TIMER7 clocks. [Memory Mapped] */
-#define CM_PER_MMC0_CLKCTRL	(CM_PER_BASE + 0x3C)
-#define CM_PER_MMC1_CLKCTRL	(CM_PER_BASE + 0xF4)
-#define CM_PER_MMC2_CLKCTRL	(CM_PER_BASE + 0xF8)
 
 /* CM_DPLL registers */
 
